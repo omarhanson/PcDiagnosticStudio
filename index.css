@@ -18,10 +18,10 @@ nav {
 .landing{background-image: url(/image/heading-img/view.jpg);
 background-repeat: none;
 background-size: cover;
-color: #fff;
+color: #fff; 
 height: 400px;
-color: #fff;
 }
+
 nav a {
   text-decoration: none;
   color: #fff;
@@ -183,12 +183,14 @@ color: #fff;
   /* background-color: #e0ddaa; */
 }
 
-li{border: #323232 2px solid;
-border-radius: 10%;
-background-color: #e0ddaa;
+li{
+  /* border: #323232 2px solid; */
+/* border-radius: 10%; */
+/* background-color: #e0ddaa; */
 color: #323232;
 margin: 10px;
 text-align: center;
+
 }
 
 
@@ -235,10 +237,10 @@ height: 300px;}
   flex-basis: 100%;
 }
 
-ol {
+ol{
   border: #000000 2px solid; 
   margin: 2%;
-  background-color: #e0ddaa;
+  background-color: #e0ddaa; 
   border-radius: 10px;
 }
 
@@ -304,7 +306,7 @@ a {
 }
 
  .info1{
-  background-color: #eeedde;
+  /* background-color: #eeedde; */
   display: inline-block;
   width: 100%;
 }

@@ -94,7 +94,7 @@ a:hover{background-color: #E0DDAA;
 /* body_Section */
  body{   
     margin: 0%;
-     background-color: #EEEDDE;  
+     /* background-color: #EEEDDE;   */
       min-width:1000px;    
       height: auto;
     }    
