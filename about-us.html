@@ -31,6 +31,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <div>
@@ -55,8 +56,8 @@
 
     <main>
       <div class="content">
-        <h2>Who we are</h2>
-        <p>
+        <h2 data-aos="fade-right" data-aos-duration="1000">Who we are</h2>
+        <p data-aos="fade-left" data-aos-duration="2000">
           Pc Diagnostic Studio is a company that offer IT services solution to
           our valued customers. We pride ourselve being a customer orientated
           business that goes above and beyond to serve you our clients. Pc
@@ -72,8 +73,8 @@
       </div>
 
       <div class="mission">
-        <h3>Mission Statement</h3>
-        <p>
+        <h3 data-aos="fade-right" data-aos-duration="1000" >Mission Statement</h3>
+        <p data-aos="fade-left" data-aos-duration="2000">
           Pc Diagnostic Studio mission is to lead by example by providing high
           quality customer service experience in Information Technology
           solutions and become a home brand name by creating an atmosphere known
@@ -82,8 +83,8 @@
       </div>
 
       <div class="vision">
-        <h3>Vision</h3>
-        <p>
+        <h3 data-aos="fade-right" data-aos-duration="1000">Vision</h3>
+        <p data-aos="fade-left" data-aos-duration="2000">
           Our vision is to become a highily recognize and recommended company
           for all IT services and solution within the local IT industry by
           creating our trade mark and reputation through consistency, hard work
@@ -98,12 +99,12 @@
     <div><h2 class="underline">Management Team</h2></div>
 
     <div class="row">
-      <div class="column">
+      <div data-aos="slide-left" data-aos-duration="2000" class="column">
         <div class="card">
           <img src="/image/heading-img/boss.jpg" alt="Ceo Mathrew Brown" />
           <div class="container">
             <h2>Matthrew Brown</h2>
-            <p class="title">CEO & Founder</p>
+            <p class="title">CEO and Founder</p>
             <p>
               Mba, Bsc, Cert in Information Communication Technology.
               <br />(Over 20 years experence.)
@@ -116,7 +117,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div data-aos="slide-up" data-aos-duration="2000" class="column">
         <div class="card">
           <img src="/image/heading-img/it.jpg" alt="Technical Manager John Thomas" />
           <div class="container">
@@ -134,7 +135,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div data-aos="slide-right" data-aos-duration="2000" class="column">
         <div class="card">
           <img src="/image/heading-img/girl.jpg" alt="Network Manager Pauline Henry" />
           <div class="container">
@@ -193,5 +194,9 @@
         <a href="">Privacy</a>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>  
   </body>
 </html>
