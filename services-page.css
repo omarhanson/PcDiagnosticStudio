@@ -79,7 +79,8 @@ nav a{text-decoration: none;
 
 nav a:hover{text-decoration:  none;
     color: #323232;
-    background-color: #E0DDAA;}
+    background-color: #E0DDAA;
+border-radius: 50%;}
 
     .red{color: #ff0000;}
 
@@ -88,7 +89,8 @@ color: #323232;}
 
 a:hover{background-color: #E0DDAA;
     color: #323232;
-    text-decoration: none;}
+    text-decoration: none;
+border-radius: 50%;}
 
 
 /* body_Section */

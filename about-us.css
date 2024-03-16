@@ -37,6 +37,7 @@ nav a {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
+  
 }
 
 .red {
@@ -47,6 +48,7 @@ nav a:hover {
   text-decoration: none;
   color: #323232;
   background-color: #e0ddaa;
+  border-radius: 50%;
 }
 
 a:focus {
@@ -58,6 +60,7 @@ a:hover {
   text-decoration: none;
   color: #323232;
   background-color: #e0ddaa;
+  border-radius: 50%;
 }
 
 /* heading_Section */

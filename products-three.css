@@ -68,17 +68,20 @@ nav a {text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    /* font-family: ; */}
+    /* font-family: ; */
+  }
 
     .red{color: #ff0000;}  
 
 nav a:hover {text-decoration:  none;
     color: #323232;
-    background-color: #E0DDAA;}
+    background-color: #E0DDAA;
+  border-radius: 50%;}
 
 a:hover{ text-decoration:  none;
     color: #323232;
-    background-color: #E0DDAA;}
+    background-color: #E0DDAA;
+  border-radius: 50%;}
 
 a:focus {  background-color: #E0DDAA;
 color: #323232;}

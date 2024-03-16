@@ -94,12 +94,14 @@ nav a:hover {
   text-decoration: none;
   color: #323232;
   background-color: #e0ddaa;
+  border-radius: 50%;
 }
 
 a:hover {
   text-decoration: none;
   color: #323232;
-  background-color: #e0ddaa;
+  background-color: #e0ddaa; 
+  border-radius: 50%;
 }
 
 a:focus {
