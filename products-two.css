@@ -1,0 +1,259 @@
+/* ==========================================================================
+   DESIGN ENGINE SYSTEMS VARIABLES
+   ========================================================================== */
+:root {
+  --primary: #0f172a;       /* Slate 900 - Dark Premium Background */
+  --accent: #2563eb;        /* Blue 600 - Core Interactive Highlight */
+  --accent-hover: #1d4ed8;  /* Blue 700 - Active Focus States */
+  --surface: #ffffff;       /* Pure Card Layer Base White */
+  --bg-main: #f8fafc;       /* Slate 50 - Background Canvas Tint */
+  
+  --text-main: #1e293b;     /* Slate 800 - Body Text Contrast */
+  --text-muted: #64748b;    /* Slate 500 - Secondary Subtitles */
+  --border: #e2e8f0;        /* Slate 200 - Grid Boundaries */
+  --danger: #ef4444;        /* Red 500 - Pricing Callouts */
+
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --font-base: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+  
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Normalization Reset Layer */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-family: var(--font-base); background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ==========================================================================
+   GLOBAL APP BAR HEADER COMPONENT
+   ========================================================================== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-brand { font-size: 1.35rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); font-weight: 500; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); padding: 0.5rem 0; position: relative; transition: var(--transition); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--accent); transform: scaleX(0); transition: var(--transition); }
+.nav-links a.active::after { transform: scaleX(1); }
+
+/* ==========================================================================
+   HERO / PAGE BANNER TEMPLATE
+   ========================================================================== */
+.hero-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: var(--surface);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.hero-banner h1 { font-size: 2.75rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; }
+.hero-banner p { color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto; font-weight: 400; }
+
+/* ==========================================================================
+   STRUCTURAL PAGE LAYOUT BLOCKS
+   ========================================================================== */
+.main-wrapper { max-width: 1280px; margin: 0 auto; width: 100%; padding: 4rem 2rem; }
+.section-title { font-size: 1.85rem; color: var(--primary); font-weight: 700; margin-bottom: 3rem; text-align: center; letter-spacing: -0.5px; }
+.section-title::after { content: ''; display: block; width: 40px; height: 3px; background-color: var(--accent); margin: 0.6rem auto 0; border-radius: 2px; }
+
+/* ==========================================================================
+   PRODUCT SHOWCASE GRID PATTERNS
+   ========================================================================== */
+.products-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  gap: 2.5rem; 
+}
+.product-card { 
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-lg); 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  box-shadow: var(--shadow-sm); 
+  transition: var(--transition); 
+}
+.product-card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: var(--shadow-lg); 
+}
+.product-img-frame { 
+  background: #ffffff; 
+  height: 220px; 
+  padding: 1.5rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-bottom: 1px solid var(--border); 
+}
+.product-img-frame img { 
+  max-height: 100%; 
+  max-width: 100%; 
+  object-fit: contain; 
+  transition: var(--transition); 
+}
+.product-card:hover .product-img-frame img { 
+  transform: scale(1.04); 
+}
+.product-details { 
+  padding: 1.5rem; 
+  display: flex; 
+  flex-direction: column; 
+  flex-grow: 1; 
+}
+.product-title { 
+  font-size: 1.05rem; 
+  font-weight: 600; 
+  color: var(--primary); 
+  line-height: 1.4; 
+  margin-bottom: 0.5rem; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden; 
+  min-height: 2.8rem; 
+}
+.product-price { 
+  font-size: 1.35rem; 
+  font-weight: 700; 
+  color: var(--danger); 
+  margin-bottom: 1.25rem; 
+  margin-top: auto; 
+}
+.product-price .currency { 
+  font-size: 0.85rem; 
+  color: var(--text-muted); 
+  font-weight: 500; 
+  margin-left: 0.15rem; 
+}
+.product-actions { 
+  display: grid; 
+  grid-template-columns: 1fr auto; 
+  gap: 0.5rem; 
+}
+
+/* ==========================================================================
+   BUTTON ARCHITECTURE COMPONENTS
+   ========================================================================== */
+.btn { 
+  font-family: var(--font-base); 
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  padding: 0.75rem 1.25rem; 
+  border-radius: var(--radius-md); 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; 
+  transition: var(--transition); 
+  border: 1px solid transparent; 
+}
+.btn-primary { background-color: var(--accent); color: var(--surface); }
+.btn-primary:hover { background-color: var(--accent-hover); }
+.btn-secondary { background-color: var(--surface); color: var(--text-main); border-color: var(--border); }
+.btn-secondary:hover { background-color: var(--bg-main); border-color: var(--text-muted); }
+
+/* ==========================================================================
+   E-COMMERCE CATALOG NAVIGATION
+   ========================================================================== */
+.pagination-wrapper { 
+  margin-top: 4rem; 
+  padding-top: 2rem; 
+  border-top: 1px solid var(--border); 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+.pagination-info { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+.pagination-links { display: flex; gap: 0.4rem; }
+.page-btn { 
+  min-width: 38px; 
+  height: 38px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-md); 
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  color: var(--text-main); 
+  transition: var(--transition); 
+}
+.page-btn:hover { border-color: var(--accent); color: var(--accent); }
+.page-btn.active { background: var(--accent); border-color: var(--accent); color: var(--surface); cursor: default; }
+
+/* Sticky Return Control */
+.scroll-top-anchor { 
+  position: fixed; 
+  bottom: 2.5rem; 
+  right: 2.5rem; 
+  background-color: var(--primary); 
+  color: var(--surface); 
+  width: 44px; 
+  height: 44px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-shadow: var(--shadow-md); 
+  z-index: 1000; 
+  transition: var(--transition); 
+}
+.scroll-top-anchor:hover { transform: translateY(-3px); background-color: var(--accent); box-shadow: var(--shadow-lg); }
+
+/* ==========================================================================
+   GLOBAL APP SYSTEM FOOTER
+   ========================================================================== */
+.site-footer { background-color: var(--primary); color: #94a3b8; padding: 4rem 2rem 2rem; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.footer-grid { max-width: 1280px; margin: 0 auto 3rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+.footer-about h3 { color: var(--surface); font-size: 1.25rem; margin-bottom: 1rem; font-weight: 700; }
+.footer-about p { font-size: 0.95rem; line-height: 1.6; max-width: 400px; }
+.footer-links h4, .footer-social h4 { color: var(--surface); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.25rem; font-weight: 700; }
+.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-links ul a { font-size: 0.95rem; transition: var(--transition); }
+.footer-links ul a:hover { color: var(--surface); }
+.social-row { display: flex; gap: 1rem; }
+.social-row a { width: 38px; height: 38px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: center; color: #cbd5e1; transition: var(--transition); }
+.social-row a:hover { background-color: var(--accent); color: var(--surface); border-color: var(--accent); transform: translateY(-2px); }
+.footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; font-size: 0.85rem; }
+.privacy-link:hover { color: var(--surface); }
+
+/* ==========================================================================
+   ADAPTIVE VIEWPORT MEDIA CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .nav-container { flex-direction: column; gap: 1.25rem; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-banner h1 { font-size: 2.25rem; }
+  .main-wrapper { padding: 3rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .pagination-wrapper { flex-direction: column; gap: 1.25rem; text-align: center; }
+  .footer-bottom { flex-direction: column; align-items: center; gap: 0.75rem; }
+}
